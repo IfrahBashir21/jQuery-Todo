@@ -44,7 +44,7 @@ $(document).ready(function(){
 
    function addTask(taskname){
 
-   	$('ul.list').append('<li> <span class="checkbox"></span><span class="text">' + taskname + '</span><button class="deleteItem"><i class="fa fa-times crossIcon" aria-hidden="true"></i></button></li>');
+   	$('ul.list').append('<li> <span class="checkbox"><i class="fa fa-circle-thin" aria-hidden="true"></i><i class="fa fa-check-circle hide" aria-hidden="true"></i></span><span class="text">' + taskname + '</span><button class="deleteItem"><i class="fa fa-times crossIcon" aria-hidden="true"></i></button></li>');
    
       checkListCount()
    }
@@ -85,8 +85,9 @@ $(document).ready(function(){
 
    function markComplete(checkbox){
    	   checkbox.parent('li').toggleClass('completed');
-       checkbox.toggleClass('fillCircle');
-	   checkbox.siblings('span.text').toggleClass('strike');
+       //checkbox.toggleClass('fillCircle');
+       checkbox.children('i').toggleClass('hide');
+	     checkbox.siblings('span.text').toggleClass('strike');
    }
    
    function showDeleteBtn(listItem){
